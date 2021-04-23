@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gabrielrufino/folquire/issues"
   },
-  "homepage": "https://github.com/gabrielrufino/folquire#readme"
+  "homepage": "https://github.com/gabrielrufino/folquire#readme",
+  "dependencies": {
+    "camelcase": "^6.2.0"
+  }
 }
