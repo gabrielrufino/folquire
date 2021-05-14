@@ -3,7 +3,7 @@
 const camelCase = require('camelcase')
 const fs = require('fs')
 
-const filterModules = file => file.endsWith('.js')
+const filterModules = file => file !== 'index.js' && file.endsWith('.js') && !file.endsWith('.test.js')
 const mapModules = folder => module => (
   [camelCase(module.replace('.js', '')), require(`${folder}/${module}`)]
 )
