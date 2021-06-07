@@ -4,7 +4,7 @@
   "description": "Requires all the modules from a folder",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
