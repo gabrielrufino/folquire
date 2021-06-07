@@ -55,3 +55,15 @@ folquire(__dirname + '/math')
     math.divide(20, 10) // 2
   })
 ```
+
+### Ignore modules
+
+```js
+'use strict'
+
+const folquire = require('folquire')
+
+const modules = folquire(__dirname + '/math', {
+  ignore: ['add.js']
+})
+```
