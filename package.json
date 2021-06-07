@@ -4,7 +4,8 @@
   "description": "Requires all the modules from a folder",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "test:watch": "npm test -- --coverage"
   },
   "repository": {
     "type": "git",
