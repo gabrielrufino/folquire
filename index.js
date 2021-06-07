@@ -12,12 +12,19 @@ const mapModules = folder => module => (
  * Requires all the modules from a folder
  * @param {String} folder
  */
-module.exports = (folder, { async = false } = {}) => {
+module.exports = (folder, { async = false, ignore = [] } = {}) => {
+  if (!Array.isArray(ignore)) {
+    throw new TypeError('Ignore must be an array')
+  }
+
+  const filterIgnoredModules = module => !ignore.includes(module)
+
   if (async) {
     return fs
       .promises
       .readdir(folder)
       .then(files => files.filter(filterModules))
+      .then(modules => modules.filter(filterIgnoredModules))
       .then(modules => modules.map(mapModules(folder)))
       .then(Object.fromEntries)
       .catch(error => error)
@@ -27,6 +34,7 @@ module.exports = (folder, { async = false } = {}) => {
     fs
       .readdirSync(folder)
       .filter(filterModules)
+      .filter(filterIgnoredModules)
       .map(mapModules(folder))
   )
 }

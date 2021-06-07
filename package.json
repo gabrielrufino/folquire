@@ -1,10 +1,11 @@
 {
   "name": "folquire",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Requires all the modules from a folder",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",

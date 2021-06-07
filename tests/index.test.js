@@ -24,4 +24,18 @@ describe('#Folquire module', () => {
       consoleLog: require('./folder/console-log'),
     })
   })
+
+  describe('Parameter \'ignore\'', () => {
+    test('Should throw an error when \'ignore\' is not an array', () => {
+      expect(() => {
+        folquire(__dirname + '/folder', { ignore: 123 })
+      }).toThrowError(new TypeError('Ignore must be an array'))
+    })
+
+    test('Should not import the modules specified in \'ignore\' parameter', () => {
+      const result = folquire(__dirname + '/folder', { ignore: ['add.js'] })
+
+      expect(result).not.toHaveProperty('add', require('./folder/add'))
+    })
+  })
 })
