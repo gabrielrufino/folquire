@@ -7,6 +7,9 @@
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
   },
+  "engines": {
+    "node": ">=12"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielrufino/folquire.git"
