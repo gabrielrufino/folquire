@@ -1,4 +1,4 @@
-const folquire = require('..')
+const folquire = require('../src')
 
 describe('#Folquire module', () => {
   test('Should require an folder synchronously', () => {
