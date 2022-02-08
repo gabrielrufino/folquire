@@ -2,7 +2,7 @@
   "name": "folquire",
   "version": "1.0.0",
   "description": "Requires all the modules from a folder",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
