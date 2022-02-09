@@ -1,6 +1,6 @@
 {
   "name": "folquire",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Requires all the modules from a folder",
   "main": "src/index.js",
   "scripts": {
@@ -24,6 +24,6 @@
     "camelcase": "^6.3.0"
   },
   "devDependencies": {
-    "jest": "^27.5.0"
+    "jest": "^27.5.1"
   }
 }
