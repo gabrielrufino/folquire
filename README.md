@@ -28,9 +28,10 @@ Let's see an example. Suppose we have the following folder structure:
 ```js
 'use strict'
 
+const { join } = require('path')
 const folquire = require('folquire')
 
-const math = folquire(__dirname + '/math')
+const math = folquire(join(__dirname, 'math'))
 
 math.add(1, 2)      // 2
 math.subtract(8, 4) // 4
@@ -45,9 +46,10 @@ math.divide(20, 10) // 2
 ```js
 'use strict'
 
+const { join } = require('path')
 const folquire = require('folquire')
 
-folquire(__dirname + '/math')
+folquire(join(__dirname, 'math'))
   .then(math => {
     math.add(1, 2)      // 2
     math.subtract(8, 4) // 4
@@ -61,9 +63,10 @@ folquire(__dirname + '/math')
 ```js
 'use strict'
 
+const { join } = require('path')
 const folquire = require('folquire')
 
-const modules = folquire(__dirname + '/math', {
+const modules = folquire(join(__dirname, 'math'), {
   ignore: ['add.js']
 })
 ```
