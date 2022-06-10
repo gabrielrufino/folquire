@@ -1,6 +1,6 @@
 {
   "name": "folquire",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Requires all the modules from a folder",
   "main": "src/index.js",
   "scripts": {
