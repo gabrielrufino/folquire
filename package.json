@@ -1,9 +1,10 @@
 {
   "name": "folquire",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Requires all the modules from a folder",
   "main": "src/index.js",
   "scripts": {
+    "reinstall": "rimraf node_modules && npm ci",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
   },
@@ -15,6 +16,7 @@
     "url": "git+https://github.com/gabrielrufino/folquire.git"
   },
   "author": "Gabriel Rufino <contato@gabrielrufino.com>",
+  "funding": "https://github.com/sponsors/gabrielrufino",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gabrielrufino/folquire/issues"
@@ -24,6 +26,7 @@
     "camelcase": "^6.3.0"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "rimraf": "^3.0.2"
   }
 }
