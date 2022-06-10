@@ -24,6 +24,7 @@
     "camelcase": "^6.3.0"
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "rimraf": "^3.0.2"
   }
 }
