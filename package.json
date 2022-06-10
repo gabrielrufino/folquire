@@ -4,6 +4,7 @@
   "description": "Requires all the modules from a folder",
   "main": "src/index.js",
   "scripts": {
+    "reinstall": "rimraf node_modules && npm ci",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
   },
