@@ -70,3 +70,7 @@ const modules = folquire(join(__dirname, 'math'), {
   ignore: ['add.js']
 })
 ```
+
+---
+
+Black Tech by [Gabriel Rufino](https://github.com/gabrielrufino) 🖤
