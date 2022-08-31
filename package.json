@@ -3,6 +3,7 @@
   "version": "1.0.9",
   "description": "Requires all the modules from a folder",
   "main": "src/index.js",
+  "type": "commonjs",
   "scripts": {
     "reinstall": "npx rimraf node_modules && npm ci",
     "test": "jest --coverage",
