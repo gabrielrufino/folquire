@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
+    "lint": "npx standard .",
+    "lint:fix": "npm run lint -- --fix",
     "reinstall": "npx rimraf node_modules && npm ci",
     "test": "jest --coverage",
     "test:watch": "npm test -- --watch"
