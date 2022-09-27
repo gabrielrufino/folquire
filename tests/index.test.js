@@ -1,3 +1,4 @@
+const { describe, expect, test } = require('@jest/globals')
 const { join } = require('path')
 
 const folquire = require('../src')
@@ -11,7 +12,7 @@ describe('#Folquire module', () => {
       subtract: require('./folder/subtract'),
       multiply: require('./folder/multiply'),
       divide: require('./folder/divide'),
-      consoleLog: require('./folder/console-log'),
+      consoleLog: require('./folder/console-log')
     })
   })
 
@@ -23,7 +24,7 @@ describe('#Folquire module', () => {
       subtract: require('./folder/subtract'),
       multiply: require('./folder/multiply'),
       divide: require('./folder/divide'),
-      consoleLog: require('./folder/console-log'),
+      consoleLog: require('./folder/console-log')
     })
   })
 

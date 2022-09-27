@@ -2,15 +2,17 @@
 
 const camelCase = require('camelcase')
 const fs = require('fs')
+const path = require('path')
 
 const filterModules = file => file !== 'index.js' && file.endsWith('.js') && !file.endsWith('.test.js')
 const mapModules = folder => module => (
-  [camelCase(module.replace('.js', '')), require(`${folder}/${module}`)]
+  [camelCase(module.replace('.js', '')), require(path.join(folder, module))]
 )
 
 /**
  * Requires all the modules from a folder
  * @param {String} folder
+ * @returns {Object}
  */
 module.exports = (folder, { async = false, ignore = [] } = {}) => {
   if (!Array.isArray(ignore)) {
