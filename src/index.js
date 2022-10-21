@@ -1,13 +1,10 @@
 'use strict'
 
-const camelCase = require('camelcase')
 const fs = require('fs')
-const path = require('path')
 
-const filterModules = file => file !== 'index.js' && file.endsWith('.js') && !file.endsWith('.test.js')
-const mapModules = folder => module => (
-  [camelCase(module.replace('.js', '')), require(path.join(folder, module))]
-)
+const filterModules = require('./helpers/filter-modules')
+const filterIgnoredModules = require('./helpers/filter-ignored-modules')
+const mapModules = require('./helpers/map-modules')
 
 /**
  * Requires all the modules from a folder
@@ -19,14 +16,12 @@ module.exports = (folder, { async = false, ignore = [] } = {}) => {
     throw new TypeError('Ignore must be an array')
   }
 
-  const filterIgnoredModules = module => !ignore.includes(module)
-
   if (async) {
     return fs
       .promises
       .readdir(folder)
       .then(files => files.filter(filterModules))
-      .then(modules => modules.filter(filterIgnoredModules))
+      .then(modules => modules.filter(filterIgnoredModules(ignore)))
       .then(modules => modules.map(mapModules(folder)))
       .then(Object.fromEntries)
       .catch(error => error)
@@ -36,7 +31,7 @@ module.exports = (folder, { async = false, ignore = [] } = {}) => {
     fs
       .readdirSync(folder)
       .filter(filterModules)
-      .filter(filterIgnoredModules)
+      .filter((filterIgnoredModules(ignore)))
       .map(mapModules(folder))
   )
 }
