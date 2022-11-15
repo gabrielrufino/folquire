@@ -8,7 +8,8 @@
     "lint": "npx standard .",
     "lint:fix": "npm run lint -- --fix",
     "reinstall": "npx rimraf node_modules && npm ci",
-    "test": "jest --coverage",
+    "test": "jest",
+    "test:cov": "npm run test -- --coverage",
     "test:watch": "npm test -- --watch"
   },
   "engines": {
