@@ -39,6 +39,18 @@ describe('#Folquire module', () => {
     }).toThrowError(new TypeError('Folder must be an string'))
   })
 
+  describe('Parameter \'async\'', () => {
+    expect(() => {
+      folquire(faker.datatype.string(), {
+        async: faker.helpers.arrayElement([
+          faker.datatype.array(),
+          faker.datatype.boolean(),
+          faker.datatype.number(),
+        ])
+      })
+    }).toThrowError(new TypeError('Async must be a boolean'))
+  })
+
   describe('Parameter \'ignore\'', () => {
     test('Should throw an error when \'ignore\' is not an array', () => {
       expect(() => {
