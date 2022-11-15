@@ -1,4 +1,5 @@
 const { describe, expect, test } = require('@jest/globals')
+const { faker } = require('@faker-js/faker')
 const { join } = require('path')
 
 const folquire = require('../src')
@@ -26,6 +27,28 @@ describe('#Folquire module', () => {
       divide: require('./folder/divide'),
       consoleLog: require('./folder/console-log')
     })
+  })
+
+  describe('Parameter \'folder\'', () => {
+    expect(() => {
+      folquire(faker.helpers.arrayElement([
+        faker.datatype.array(),
+        faker.datatype.boolean(),
+        faker.datatype.number(),
+      ]))
+    }).toThrowError(new TypeError('Folder must be an string'))
+  })
+
+  describe('Parameter \'async\'', () => {
+    expect(() => {
+      folquire(faker.datatype.string(), {
+        async: faker.helpers.arrayElement([
+          faker.datatype.array(),
+          faker.datatype.boolean(),
+          faker.datatype.number(),
+        ])
+      })
+    }).toThrowError(new TypeError('Async must be a boolean'))
   })
 
   describe('Parameter \'ignore\'', () => {

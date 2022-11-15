@@ -12,6 +12,14 @@ const mapModules = require('./helpers/map-modules')
  * @returns {Object}
  */
 module.exports = (folder, { async = false, ignore = [] } = {}) => {
+  if (typeof folder !== 'string') {
+    throw new TypeError('Folder must be an string')
+  }
+
+  if (typeof async !== 'boolean') {
+    throw new TypeError('Async must be a boolean')
+  }
+
   if (!Array.isArray(ignore)) {
     throw new TypeError('Ignore must be an array')
   }
