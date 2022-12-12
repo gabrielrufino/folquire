@@ -34,7 +34,7 @@ describe('#Folquire module', () => {
       folquire(faker.helpers.arrayElement([
         faker.datatype.array(),
         faker.datatype.boolean(),
-        faker.datatype.number(),
+        faker.datatype.number()
       ]))
     }).toThrowError(new TypeError('Folder must be an string'))
   })
@@ -44,8 +44,8 @@ describe('#Folquire module', () => {
       folquire(faker.datatype.string(), {
         async: faker.helpers.arrayElement([
           faker.datatype.array(),
-          faker.datatype.boolean(),
-          faker.datatype.number(),
+          faker.datatype.string(),
+          faker.datatype.number()
         ])
       })
     }).toThrowError(new TypeError('Async must be a boolean'))
