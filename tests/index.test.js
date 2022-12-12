@@ -44,7 +44,7 @@ describe('#Folquire module', () => {
       folquire(faker.datatype.string(), {
         async: faker.helpers.arrayElement([
           faker.datatype.array(),
-          faker.datatype.boolean(),
+          faker.datatype.string(),
           faker.datatype.number(),
         ])
       })
