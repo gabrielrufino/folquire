@@ -1,1 +1,1 @@
-module.exports = ignore => module => !ignore.includes(module)
+module.exports = (ignore) => (module) => !ignore.includes(module);
