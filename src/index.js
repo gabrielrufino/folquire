@@ -1,10 +1,8 @@
-'use strict'
+const fs = require('fs');
 
-const fs = require('fs')
-
-const filterModules = require('./helpers/filter-modules')
-const filterIgnoredModules = require('./helpers/filter-ignored-modules')
-const mapModules = require('./helpers/map-modules')
+const filterIgnoredModules = require('./helpers/filter-ignored-modules');
+const filterModules = require('./helpers/filter-modules');
+const mapModules = require('./helpers/map-modules');
 
 /**
  * Requires all the modules from a folder
@@ -13,26 +11,26 @@ const mapModules = require('./helpers/map-modules')
  */
 module.exports = (folder, { async = false, ignore = [] } = {}) => {
   if (typeof folder !== 'string') {
-    throw new TypeError('Folder must be an string')
+    throw new TypeError('Folder must be an string');
   }
 
   if (typeof async !== 'boolean') {
-    throw new TypeError('Async must be a boolean')
+    throw new TypeError('Async must be a boolean');
   }
 
   if (!Array.isArray(ignore)) {
-    throw new TypeError('Ignore must be an array')
+    throw new TypeError('Ignore must be an array');
   }
 
   if (async) {
     return fs
       .promises
       .readdir(folder)
-      .then(files => files.filter(filterModules))
-      .then(modules => modules.filter(filterIgnoredModules(ignore)))
-      .then(modules => modules.map(mapModules(folder)))
+      .then((files) => files.filter(filterModules))
+      .then((modules) => modules.filter(filterIgnoredModules(ignore)))
+      .then((modules) => modules.map(mapModules(folder)))
       .then(Object.fromEntries)
-      .catch(error => error)
+      .catch((error) => error);
   }
 
   return Object.fromEntries(
@@ -40,6 +38,6 @@ module.exports = (folder, { async = false, ignore = [] } = {}) => {
       .readdirSync(folder)
       .filter(filterModules)
       .filter((filterIgnoredModules(ignore)))
-      .map(mapModules(folder))
-  )
-}
+      .map(mapModules(folder)),
+  );
+};
