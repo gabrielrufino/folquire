@@ -2,4 +2,7 @@
 assets
 tests
 
+.eslintrc.json
 .gitignore
+CNAME
+sonar-project.properties
