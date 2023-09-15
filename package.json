@@ -1,6 +1,6 @@
 {
   "name": "folquire",
-  "version": "1.0.26",
+  "version": "1.0.28",
   "description": "Requires all the modules from a folder",
   "main": "src/index.js",
   "type": "commonjs",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
     "@gabrielrufino/eslint-config": "^1.5.1",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "eslint-plugin-jest": "^27.2.3",
     "jest": "^28.1.3",
     "rimraf": "^5.0.1"
