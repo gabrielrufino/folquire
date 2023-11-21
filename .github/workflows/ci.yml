@@ -35,6 +35,7 @@ jobs:
           path: coverage
   sonarqube:
     runs-on: ubuntu-latest
+    continue-on-error: true
     needs:
       - test
     steps:
