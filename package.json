@@ -14,7 +14,7 @@
     "prepare": "husky"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "repository": {
     "type": "git",
