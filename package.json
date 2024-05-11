@@ -11,7 +11,7 @@
     "test": "jest",
     "test:cov": "npm run test -- --coverage",
     "test:watch": "npm test -- --watch",
-    "prepare": "husky"
+    "postinstall": "husky"
   },
   "engines": {
     "node": ">=16"
