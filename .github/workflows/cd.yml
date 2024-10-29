@@ -9,9 +9,8 @@ on:
       - main
 
 jobs:
-  publish:
-    needs:
-      - ci
+  node-pkg-cd:
+    name: Node package CD
     runs-on: ubuntu-latest
     steps:
       - uses: gabrielrufino/check-ci@main
