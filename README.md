@@ -2,7 +2,9 @@
 
 # Folquire
 
-
+[![Black Tech by Gabriel Rufino](https://img.shields.io/badge/Black_Tech-by_Gabriel_Rufino_%F0%9F%96%A4-white?style=flat-square&labelColor=444444)](https://gabrielrufino.com)
+[![CI](https://github.com/gabrielrufino/folquire/actions/workflows/ci.yml/badge.svg)](https://github.com/gabrielrufino/folquire/actions/workflows/ci.yml)
+[![CD](https://github.com/gabrielrufino/folquire/actions/workflows/cd.yml/badge.svg)](https://github.com/gabrielrufino/folquire/actions/workflows/cd.yml)
 
 Requires all the modules from a folder
 
@@ -10,8 +12,8 @@ Requires all the modules from a folder
 
 To install run this command:
 
-```bash
-$ npm install folquire
+```sh
+npm install folquire
 ```
 
 Let's see an example. Suppose we have the following folder structure:
@@ -72,7 +74,3 @@ const modules = folquire(join(__dirname, 'math'), {
   ignore: ['add.js']
 })
 ```
-
----
-
-Black Tech by [Gabriel Rufino](https://github.com/gabrielrufino) 🖤
