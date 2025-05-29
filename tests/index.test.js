@@ -36,7 +36,7 @@ describe('#Folquire module', () => {
         faker.datatype.boolean(),
         faker.datatype.number(),
       ]));
-    }).toThrowError(new TypeError('Folder must be an string'));
+    }).toThrowError(new TypeError('Folder must be a string'));
   });
 
   describe('Parameter \'async\'', () => {
